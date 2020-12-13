@@ -348,7 +348,7 @@
         </div>
       </div>
       <div class="mt-5 md:mt-0 md:col-span-2">
-        <form action="#" method="POST">
+        <form id="contact-form" name="contact_form">
           <div class="shadow overflow-hidden sm:rounded-md">
             <div class="px-4 py-5 bg-gray-900 sm:p-6">
               <div class="grid grid-cols-6 gap-6">
@@ -368,8 +368,8 @@
                 </div>
   
                 <div class="col-span-6 sm:col-span-4">
-                  <label for="street_address" class="block text-sm font-medium text-gray-300">Số điện thoại</label>
-                  <input type="text" name="street_address" id="street_address" autocomplete="street-address" class="py-2 mt-1 outline-none focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md bg-gray-700 text-gray-200 px-2 border border-gray-400" placeholder="090xxxxxxxx">
+                  <label for="phone_number" class="block text-sm font-medium text-gray-300">Số điện thoại</label>
+                  <input type="text" name="phone_number" id="phone_number" autocomplete="phone-number" class="py-2 mt-1 outline-none focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md bg-gray-700 text-gray-200 px-2 border border-gray-400" placeholder="090xxxxxxxx">
                 </div>
 
                 <div  class="col-span-6 sm:col-span-4">
@@ -377,10 +377,10 @@
                     Nội dung
                   </label>
                   <div class="mt-1">
-                    <textarea id="about" name="about" rows="3" class="outline-none shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md bg-gray-700 text-gray-200 px-2 py-2 border border-gray-400" placeholder="Nội dung của bạn"></textarea>
+                    <textarea id="content" name="content" rows="3" class="outline-none shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md bg-gray-700 text-gray-200 px-2 py-2 border border-gray-400" placeholder="Nội dung của bạn"></textarea>
                   </div>
                   <p class="mt-2 text-sm text-gray-300">
-                    Phản hồi của bạn sẽ được gửi đến Google Form của Lighting+Magic.
+                    Phản hồi của bạn sẽ được gửi đến Jot Form của Lighting+Magic.
                   </p>
                 </div>
               </div>
@@ -397,6 +397,7 @@
       </div>
     </div>
   </div>
+  <script src="https://js.jotform.com/JotForm.js"></script>
   <script src="./index.js" ></script>
 </body>
 </html>
