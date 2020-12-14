@@ -1,0 +1,58 @@
+<!DOCTYPE HTML> 
+<html> 
+
+<head> 
+	<title> 
+		Redirect to Form
+	</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="refresh"
+		content="2; 
+				url=https://form.jotform.com/203473185372456">
+	<style>
+	/* Webfont */
+@import 'https://fonts.googleapis.com/css?family=Montserrat:400,700';
+
+body {
+  background-color: rgb(0, 0, 0);
+  font-size: 24px;
+  font-family: 'Montserrat', Helvetica Neue, Helvetica, sans-serif;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column
+}
+
+p {
+  text-align: center;
+  margin: 2em;
+  color: #afafaf;
+  font-size: 1rem;
+}
+	</style>
+</head> 
+
+<body> 
+
+<img src="../assets/images/logo.png" alt="Company Logo" width="300"  loading="lazy">
+<p>Bạn sẽ chuyển tiếp tới <a href="https://form.jotform.com/203473185372456" style="
+  background: linear-gradient(90deg, rgba(110,187,203,1) 0%, rgba(116,140,193,1) 54%, rgba(119,101,176,1) 100%); -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; color:blueviolet; text-decoration: none"> Đơn tham gia thử nghiệm sản phẩm </a> trong <time><strong id="seconds">2</strong> giây</time>.</p>
+
+	
+<script> 
+var el = document.getElementById('seconds'),
+    total = el.innerHTML,
+    timeinterval = setInterval(function () {
+        total = --total;
+        el.textContent = total;
+        if (total <= 0) {
+            clearInterval(timeinterval);
+        }
+    }, 1000);
+
+</script/>
+</body> 
+
+</html> 

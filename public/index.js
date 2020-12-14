@@ -38,6 +38,14 @@ function toggleHidden(initiator, recipents) {
   });
 }
 
+function dismiss(initiators, recipent) {
+  for (let item of initiators) {
+    item.addEventListener("click", () => {
+      recipent.classList.toggle("hidden");
+    });
+  }
+}
+
 function getFormData(form) {
   if (
     !(
@@ -101,6 +109,9 @@ window.onload = () => {
   let contactButtons = document.getElementsByClassName("contact-link");
   let contact = document.getElementById("contact-to");
 
+  let announceButtons = document.getElementsByClassName("announce-link");
+  let announce = document.getElementById("announce-to");
+
   let form = document.contact_form;
 
   form.addEventListener("submit", (e) => {
@@ -114,4 +125,6 @@ window.onload = () => {
   initScrollTo(contactButtons, contact);
 
   toggleHidden(mobileMenuButton, mobileMenuRecipents);
+
+  dismiss(announceButtons, announce);
 };
