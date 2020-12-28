@@ -200,20 +200,20 @@ $(document).ready(function () {
   var timer = 0;
 
   var refreshId = setInterval(function () {
-    timer = timer + 0.25;
+    timer = timer + 0.1;
 
     var turbidity = parseFloat($("#turbidity").val());
     var longitude = deg2rad(parseFloat($("#longitude").val()));
     var latitude = deg2rad(parseFloat($("#latitude").val()));
-    var time_zone_meridian = deg2rad(parseFloat($("#tz_sm").val()));
+    var time_zone_meridian = deg2rad(parseFloat($("#tz_sm").val()) * 15);
     var date = $("#datepicker").datepicker("getDate");
 
     var tz_offset = Math.floor(time_zone_meridian / deg2rad(15) + 0.5);
 
     var julian = day_of_year(date);
-    total_hours_today = timer % 24;
+    var total_hours_today = timer % 24;
 
-    time_str =
+    var time_str =
       Math.floor(total_hours_today) +
       ":" +
       Math.floor((total_hours_today - Math.floor(total_hours_today)) * 60);
@@ -246,11 +246,11 @@ $(document).ready(function () {
     // Visualize
     var canvas = document.getElementById("sky");
     var colorAverage = document.getElementById("avg-color");
-    canvas.style.filter = "blur(3px) saturate(150%)";
+    canvas.style.filter = "blur(3px) saturate(200%)";
     var ctx = canvas.getContext("2d");
 
-    var resolution_x = 640;
-    var resolution_y = 240;
+    var resolution_x = 60;
+    var resolution_y = 40;
     var scale_x = canvas.width;
     var scale_y = canvas.height;
 
@@ -282,7 +282,5 @@ $(document).ready(function () {
         ctx.fillRect(x, y, scale_x / resolution_x, scale_y / resolution_y);
       }
     }
-
-    //    $('#img-container').load('images/gallery/best/random.php?'+r);
-  }, 100);
+  }, 50);
 });
