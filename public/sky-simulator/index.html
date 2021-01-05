@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="../css/tailwind.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
 
 <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
 <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
@@ -32,7 +33,7 @@
     
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center flex-col items-center lg:my-8 mb-4 md:mb-0" >
         <div class="w-full max-w-3xl mt-5 md:mt-0 ">
-          <form id="contact-form" name="contact_form">
+          
             <div class="shadow overflow-hidden sm:rounded-md">
               <div class="px-4 py-5 bg-gray-900 sm:p-6">
                 <div class="grid grid-cols-6 gap-6">
@@ -87,31 +88,21 @@
                     <input id="turbidity" class="rounded-lg appearance-none bg-gray-400 h-3 w-3/4" type="range" min="0" max="32" step="1" value="4" />
                   </div>
                   <div class="col-span-6 sm:col-span-3">
-                    <label for="avg-color" class="block text-sm font-medium text-gray-300">Màu trung bình</label>
+                    <label for="avg-color" class="block text-sm font-medium text-gray-300">Màu chủ đạo</label>
                     <input type="text" name="avg-color" id="avg-color"class="py-2 mt-1 outline-none focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm rounded-md text-gray-200 px-2 border border-gray-400" readonly>
                   </div>
 
                   <div  class="col-span-6 sm:col-span-4">
-                    <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" onclick="alert('Tính năng chưa được kích hoạt. Xin vui lòng chờ đến ngày sản phẩm ra mắt.')" >
+                    <button id="exportData" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"  >
                         Xuất dữ liệu
                       </button>
                   </div>
-
-                  
-  
-                  <div  class="col-span-6 sm:col-span-4">
-                    <label for="about" class="block text-sm font-medium text-gray-300">
-                      Dữ liệu mô phỏng bầu trời
-                    </label>
-                    <div class="mt-1">
-                      <textarea id="content" name="content" rows="3" class="outline-none shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md bg-gray-700 text-gray-200 px-2 py-2 border border-gray-400" placeholder="Nội dung" readonly></textarea>
-                    </div>
                   
                   </div>
                   <div class="col-span-6">
                    
                       <p class="mt-3 text-xs text-gray-500 sm:mt-5 sm:max-w-xl sm:mx-auto md:mt-5 lg:mx-0">
-                        Đây là tiện ích và dữ liệu độc quyền cho các sản phẩm của AquaSmart và L+M được bảo vệ bởi luật pháp. Nghiêm cấm sao chép dưới mọi hình thức. Về mô hình tính toán, chúng tôi dựa trên nghiên cứu <b>"A Practical Analytic Model for Daylight" </b>của Preetham et al (1999) tại đại học Duke, Mĩ.
+                        Đây là tiện ích và dữ liệu độc quyền cho các sản phẩm của AquaSmart và L+M. Nghiêm cấm sao chép dưới mọi hình thức. Về mô hình tính toán, chúng tôi dựa trên nghiên cứu <b>"A Practical Analytic Model for Daylight" </b>của Preetham et al (1999) tại đại học Duke, Mĩ.
                       </p>
                 </div>
                 </div>
@@ -120,10 +111,11 @@
               </div>
               
             </div>
-          </form>
+    
         </div>
       </div>
     </div>
+  <script src="FileSaver.js"></script>
     
   <script src="./index.js" ></script>
   <script src="./calculation.js" ></script>
