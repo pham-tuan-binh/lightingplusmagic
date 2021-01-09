@@ -101,53 +101,6 @@ $(document).ready(() => {
     );
   }
 
-  function getAverageRGB(imgEl) {
-    let blockSize = 5, // only visit every 5 pixels
-      defaultRGB = { r: 0, g: 0, b: 0 }, // for non-supporting envs
-      canvas = document.createElement("canvas"),
-      context = canvas.getContext && canvas.getContext("2d"),
-      data,
-      width,
-      height,
-      i = -4,
-      length,
-      rgb = { r: 0, g: 0, b: 0 },
-      count = 0;
-
-    if (!context) {
-      return defaultRGB;
-    }
-
-    height = canvas.height =
-      imgEl.naturalHeight || imgEl.offsetHeight || imgEl.height;
-    width = canvas.width =
-      imgEl.naturalWidth || imgEl.offsetWidth || imgEl.width;
-
-    context.drawImage(imgEl, 0, 0);
-
-    try {
-      data = context.getImageData(0, 0, width, height);
-    } catch (e) {
-      /* security error, img on diff domain */
-      return defaultRGB;
-    }
-
-    length = data.data.length;
-
-    while ((i += blockSize * 4) < length) {
-      ++count;
-      rgb.r += data.data[i];
-      rgb.g += data.data[i + 1];
-      rgb.b += data.data[i + 2];
-    }
-
-    // ~~ used to floor values
-    rgb.r = ~~(rgb.r / count);
-    rgb.g = ~~(rgb.g / count);
-    rgb.b = ~~(rgb.b / count);
-
-    return rgb;
-  }
   function Calc_Sky_RGB(
     zenith,
     azimuth,
@@ -264,9 +217,9 @@ $(document).ready(() => {
   function exportFile() {
     let exportedData = {
       turbidity: parseFloat($("#turbidity").val()),
-      longitude: deg2rad(parseFloat($("#longitude").val())),
-      latitude: deg2rad(parseFloat($("#latitude").val())),
-      timeZone: deg2rad(parseFloat($("#tz_sm").val()) * 15),
+      longitude: parseFloat($("#longitude").val()),
+      latitude: parseFloat($("#latitude").val()),
+      timeZone: parseFloat($("#tz_sm").val()),
       date: $("#datepicker").datepicker("getDate"),
       data: [],
     };
@@ -284,9 +237,7 @@ $(document).ready(() => {
       });
     }
 
-    var blob = new Blob([JSON.stringify(exportedData, null, 2)], {
-      type: "application/json;charset=utf-8",
-    });
+    var blob = new Blob([JSON.stringify(exportedData, null, 2)]);
     saveAs(
       blob,
       (Math.random().toString(36) + "00000000000000000").slice(2, 10) +
@@ -338,7 +289,6 @@ $(document).ready(() => {
 
     // Visualize
     let canvas = document.getElementById("sky");
-    let colorAverage = document.getElementById("avg-color");
     canvas.style.filter = "blur(3px)";
     let ctx = canvas.getContext("2d");
 
@@ -346,13 +296,6 @@ $(document).ready(() => {
     let resolution_y = 40;
     let scale_x = canvas.width;
     let scale_y = canvas.height;
-
-    // console.log(`rgb(${cavg.r},${cavg.g},${cavg.b})`);
-
-    function showDominantColor([red, green, blue]) {
-      colorAverage.value = `rgb(${red},${green},${blue})`;
-      colorAverage.style.backgroundColor = `rgb(${red},${green},${blue})`;
-    }
 
     for (let row = 0; row < 1; row += 1 / resolution_y) {
       for (let col = 0; col < 1; col += 1 / resolution_x) {
@@ -375,33 +318,6 @@ $(document).ready(() => {
         ctx.fillRect(x, y, scale_x / resolution_x, scale_y / resolution_y);
       }
     }
-
-    canvas.toBlob(function (blob) {
-      var newImg = document.createElement("img");
-
-      var url = URL.createObjectURL(blob);
-
-      newImg.onload = function () {
-        // no longer need to read the blob so it's revoked
-        URL.revokeObjectURL(url);
-      };
-
-      newImg.src = url;
-      newImg.width = canvas.width;
-      newImg.height = canvas.height;
-
-      var colortho = new ColorThief();
-
-      if (newImg.complete) {
-        showDominantColor(colortho.getColor(newImg));
-      } else {
-        newImg.addEventListener("load", function () {
-          showDominantColor(colortho.getColor(newImg));
-        });
-      }
-    });
-
-    getColor(time);
   }
 
   onmessage = function (evt) {
