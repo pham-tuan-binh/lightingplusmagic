@@ -1,9 +1,18 @@
 <!doctype html>
 <html>
 <head>
+  <title>Lighting+Magic</title>
+  <meta name="Description" content="Startup chuyên cung cấp các giải pháp ánh sáng chuyên dụng hang dau Viet Nam.">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link href="./css/tailwind.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
   <!-- ... -->
 </head>
 <body class="bg-black">
@@ -11,22 +20,22 @@
  <!-- This example requires Tailwind CSS v2.0+ -->
 <div>
     <nav class="relative z-10 bg-black">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto px-8 py-1 sm:px-12 lg:px-12">
         <div class="flex items-center justify-between h-16">
           <div class="flex items-center">
             <div class="flex-shrink-0">
-              <img class="h-7" src="./assets/images/logo.png" alt="Workflow">
+              <img class="h-7 hidden md:block" src="./assets/images/logo.png" alt="Workflow">
+              <img class="h-20 -ml-2 md:hidden" src="./assets/images/small-logo.png" alt="Workflow">
             </div>
             <div class="hidden md:block">
               <div class="ml-10 flex items-baseline space-x-4">
                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                <p class="home-link bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Trang chủ</p>
+                <a class=" bg-gray-900 text-white px-3 py-2 rounded-full text-sm font-medium" href="/">Trang chủ</a>
   
-                <p class="intro-link text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Giới thiệu</p>
-  
-                <p class="product-link text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Sản phẩm</p>
+                
+                <a class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-full text-sm font-medium" href="/product">Sản phẩm</a>
 
-                <p class="contact-link text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Liên hệ</p>
+                <p class="contact-link text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-full text-sm font-medium">Liên hệ</p>
   
               </div>
             </div>
@@ -34,7 +43,7 @@
           
           <div class="-mr-2 flex md:hidden ">
             <!-- Mobile menu button -->x
-            <button id="mobile-menu-button" class="bg-black inline-flex items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+            <button id="mobile-menu-button" class="bg-black inline-flex items-center justify-center p-2 rounded-md text-white hover:text-white  focus:outline-none ">
               <span class="sr-only">Open main menu</span>
               <!--
                 Heroicon name: menu
@@ -62,316 +71,293 @@
   
         Open: "block", closed: "hidden"
       -->
-      <div class="hidden md:hidden mobile-menu-recipents">
+      <div class="hidden md:hidden mobile-menu-recipents transition duration-1000">
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-          <p class="home-link bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">Trang chủ</a>
+          <a class="bg-gradient-to-l from-gray-900 to-black mr-6 sm:mr-8 text-white block px-6 py-2 sm:px-8 text-base font-medium" href="/">Trang chủ</a>
   
-          <p class="intro-link text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Giới thiệu</a>
-  
-          <p class="product-link text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Sản phẩm</a>
+          <a class="text-gray-300 hover:bg-gradient-to-l hover:from-blue-600 hover:to-black sm:px-8 hover:text-white block px-6 py-2 rounded-full text-base font-medium" href="/product">Sản phẩm</a>
 
-          <p class="contact-link text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Liên hệ</a>
+          <p class="contact-link text-gray-300 hover:bg-gradient-to-l hover:from-blue-600 hover:to-black sm:px-8 hover:text-white block px-6 py-2 rounded-full text-base font-medium">Liên hệ</p>
         </div>
         </div>
       </div>
     </nav>
   
+    <div class="hidden md:block w-full h-80 my-10">
+      <img class="hidden px-14 object-cover h-full md:block lg:w-full lg:h-full" src="./assets/images/banner.png" alt="">
+    </div>
     
-    <img class="lg:hidden h-48 w-full object-cover sm:h-72 md:h-96" src="./assets/images/banner.png" alt="">
+    <img class="block md:hidden w-full object-cover overflow-scroll" src="./assets/images/banner-vertical.png" alt="">
       
-    <main id="home-to" class="lg:relative lg:z-10 mt-5 mx-auto max-w-7xl pb-4 px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
-        <div class="sm:text-center lg:text-left">
+    <main id="home-to" class="lg:relative lg:z-10 mt-5 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28 bg-gradient-to-t from-gray-900 to-black pb-28">
+        <div class="text-center ">
           <h1 class="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
             <span class="block xl:inline">Màu sắc</span>
-            <span class="block bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-green-500 xl:inline">từ thiên nhiên</span>
+            <span class="block">từ thiên nhiên</span>
           </h1>
-          <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+          <p class="my-3 text-base text-gray-500 sm:mt-5 text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl ">
             Giải pháp ánh sáng cao cấp và thông minh dành cho các hệ thống thuỷ sinh đến từ 𝗟𝗶𝗴𝗵𝘁𝗶𝗻𝗴+𝗠𝗮𝗴𝗶𝗰.
           </p>
-          <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-            <div class="rounded-md shadow">
-              <p class="intro-link bg-gray-900 w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md  text-transparent hover:text-black hover:bg-white md:py-3 md:text-lg md:px-10">
-                <span class="bg-clip-text bg-gradient-to-r from-yellow-200 to-green-300 ">Giới thiệu</span>
-              </p>
-            </div>
-            <div class="mt-3 sm:mt-0 sm:ml-3">
-              <p class="product-link w-full flex items-center justify-center px-8 py-3 border  text-base font-medium rounded-md text-gray-300 bg-transparent hover:text-black hover:bg-white md:py-3 md:text-lg md:px-10">
-                Sản phẩm
+          <div class="w-full mt-5 sm:mt-8 flex justify-center ">
+            <div class="rounded-full shadow">
+              <p class="intro-link bg-blue-600 w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full  text-white hover:text-black hover:bg-white md:py-3 md:text-lg md:px-10 shadow-lg">
+                <span class="">Giới thiệu</span>
               </p>
             </div>
           </div>
         </div>
       </main>
-    </div>
-  </div>
-  <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-    <img class="hidden h-auto w-full object-contain lg:block lg:w-full lg:h-full" src="./assets/images/banner-vertical.png" alt="">
-  </div>
+   
+ 
 
 
-  <div id="intro-to" class="py-12 mt-12 bg-black">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="">
-        <h2  class="text-base text-gray-200 font-semibold tracking-wide uppercase">Giới thiệu</h2>
+  <div id="intro-to" class="mx-auto max-w-7xl py-12 bg-gradient-to-b from-gray-900 to-black">
+    <div class="max-w-7xl mx-auto w-full mb-10 px-4 sm:px-6 lg:px-8">
+      <div class="mb-10">
+        <h2  class="text-center text-base text-gray-200 font-semibold tracking-wide uppercase">Giới thiệu</h2>
         <!-- <p class="py-2 mt-2 text-3xl leading-8 font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-green-500 sm:text-4xl">
           Hệ thống ánh sáng L+M
         </p> -->
-        <img class="h-10 mt-5" src="./assets/images/logo.png" alt="Workflow">
-        <p class="mt-4 max-w-2xl text-xl text-gray-500">
-          𝗟𝗶𝗴𝗵𝘁𝗶𝗻𝗴+𝗠𝗮𝗴𝗶𝗰 là startup chuyên cung cấp các giải pháp ánh sáng chuyên dụng. Với những sản phẩm chất lượng cao và tính năng đặc biệt, L+M luôn đi đầu thị trường về công nghệ và độ hài lòng của khách hàng.
+        <img class="mx-auto h-12 mt-5" src="./assets/images/logo.png" alt="Workflow">
+        <p class="text-center mx-auto mt-4 max-w-3xl text-lg text-gray-500">
+          <span class="md:hidden">
+            𝗟𝗶𝗴𝗵𝘁𝗶𝗻𝗴+𝗠𝗮𝗴𝗶𝗰 là startup chuyên cung cấp các giải pháp ánh sáng chuyên dụng hang dau Viet Nam.
+          </span>
+          <span class="hidden md:block">
+            𝗟𝗶𝗴𝗵𝘁𝗶𝗻𝗴+𝗠𝗮𝗴𝗶𝗰 là startup chuyên cung cấp các giải pháp ánh sáng chuyên dụng. Với những sản phẩm chất lượng cao và tính năng đặc biệt, L+M luôn đi đầu thị trường về công nghệ và độ hài lòng của khách hàng.
+          </span>
         </p>
+        <br/>
       </div>
   
       <div class="mt-10">
         <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
-          <div class="flex">
+
+          <div class="flex flex-col bg-gradient-to-tr from-green-700 to-green-400 rounded-lg p-4 h-48">
             <div class="flex-shrink-0">
-              <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+              <div class="flex items-center justify-center h-12 w-12 rounded-md text-green-900">
                 <!-- Heroicon name: globe-alt -->
-                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                <svg class="h-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
                 
               </div>
             </div>
-            <div class="ml-4">
+            <div class="mt-4">
               <dt class="text-lg leading-6 font-medium text-gray-200">
                 Bền bỉ và ổn định
               </dt>
-              <dd class="mt-2 text-base text-gray-500">
+              <dd class="mt-2 text-base text-gray-200">
                  Module led tích hợp chỉnh lưu trên mọi kênh, giảm thiểu nỗi lo nguồn điện chất lượng kém, hiệu điện thế không phù hợp.
               </dd>
             </div>
           </div>
-  
-          <div class="flex">
+
+          <div class="flex flex-col bg-gradient-to-tr from-blue-700 to-blue-400 rounded-lg p-4 h-48">
             <div class="flex-shrink-0">
-              <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                
-                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              <div class="flex items-center justify-center h-12 w-12 rounded-md text-blue-900">
+                <!-- Heroicon name: globe-alt -->
+                <svg class="h-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 
               </div>
             </div>
-            <div class="ml-4">
+            <div class="mt-4">
               <dt class="text-lg leading-6 font-medium text-gray-200">
                 Kết nối mọi nơi
               </dt>
-              <dd class="mt-2 text-base text-gray-500">
-               Ứng dụng web có thể truy cập ở mọi nơi, bất cứ lúc nào trên mọi nền tảng.
+              <dd class="mt-2 text-base text-gray-200">
+                Ứng dụng web có thể truy cập ở mọi nơi, bất cứ lúc nào trên mọi nền tảng.
               </dd>
             </div>
           </div>
-  
-          <div class="flex">
+
+          <div class="flex flex-col bg-gradient-to-tr from-yellow-700 to-yellow-400  rounded-lg p-4 h-48">
             <div class="flex-shrink-0">
-              <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                <!-- Heroicon name: lightning-bolt -->
-                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+              <div class="flex items-center justify-center h-12 w-12 rounded-md text-yellow-900">
+                <!-- Heroicon name: globe-alt -->
+                <svg class="h-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
                 </svg>
                 
               </div>
             </div>
-            <div class="ml-4">
+            <div class="mt-4">
               <dt class="text-lg leading-6 font-medium text-gray-200">
                 Công nghệ tối ưu
+                
               </dt>
-              <dd class="mt-2 text-base text-gray-500">
+              <dd class="mt-2 text-base text-gray-200">
                 Hỗ trợ độc quyền nhiều công nghệ mạnh mẽ trong cả phần cứng và phần mềm.
+
               </dd>
             </div>
           </div>
-  
-          <div class="flex">
+
+          <div class="flex flex-col bg-gradient-to-tr from-gray-700 to-gray-400 rounded-lg p-4 h-48">
             <div class="flex-shrink-0">
-              <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                <!-- Heroicon name: annotation -->
-                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+              <div class="flex items-center justify-center h-12 w-12 rounded-md text-gray-900">
+                <!-- Heroicon name: globe-alt -->
+                <svg class="h-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                 </svg>
                 
               </div>
             </div>
-            <div class="ml-4">
+            <div class="mt-4">
               <dt class="text-lg leading-6 font-medium text-gray-200">
                 Bảo mật tuyệt đối
+                
               </dt>
-              <dd class="mt-2 text-base text-gray-500">
+              <dd class="mt-2 text-base text-gray-200">
+                
                 Dữ liệu được bảo mật qua nhiều lớp và được lưu trữ trên những cơ sở hàng đầu.
+
               </dd>
             </div>
+          </div>
+  
+  
+          
+  
+          
           </div>
         </dl>
       </div>
     </div>
   </div>
-  <div class="bg-gray-900">
-    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
-      <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-3xl">
-        <span class="block">Cảm thấy hứng thú ?</span>
-        <span class="py-2 block bg-clip-text text-transparent bg-gradient-to-r from-blue-200 to-purple-300">Tham gia thử nghiệm sản phẩm tại đây</span>
-      </h2>
-      <div class="mt-8 lex lg:mt-0 lg:flex-shrink-0">
-        <div class="inline-flex rounded-md shadow">
-          <a href="/circadian-form" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-transparent font-medium rounded-md bg-gray-800 hover:text-black hover:bg-white">
-            <span class="bg-clip-text bg-gradient-to-r from-blue-200 to-purple-300">Bắt đầu</span>
-          </a>
-        </div>
-        <div class="ml-3 inline-flex rounded-md shadow">
-          <p class="product-link inline-flex items-center justify-center px-5 py-3 border  text-base font-medium rounded-md text-gray-300 bg-transparent hover:text-black hover:bg-white">
-            Tìm hiểu thêm
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div id="product-to" class="pt-12 mt-12 bg-black">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="">
-        <h2  class="text-base text-gray-200 font-semibold tracking-wide uppercase">Sản phẩm mới</h2>
+  <div class="mx-auto max-w-7xl pb-12">
+    <div class="max-w-7xl mx-auto w-full mb-10 px-4 sm:px-6 lg:px-8">
+      <div class="mb-10">
+        <h2  class="text-center text-base text-gray-200 font-semibold tracking-wide uppercase">Tính năng</h2>
         <!-- <p class="py-2 mt-2 text-3xl leading-8 font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-green-500 sm:text-4xl">
           Hệ thống ánh sáng L+M
         </p> -->
-        <img class="h-10 mt-5" src="./assets/images/circadian.png" alt="Workflow">
-        <p class="mt-4 max-w-2xl text-xl text-gray-500">
-          𝗖𝗶𝗿𝗰𝗮𝗱𝗶𝗮𝗻 là dòng sản phẩm mới nhất của 𝗟𝗶𝗴𝗵𝘁𝗶𝗻𝗴+𝗠𝗮𝗴𝗶𝗰 trên nền tảng AquaSmart. Cạnh tranh trực tiếp với hệ thống đèn thủy sinh thông minh của Chichiros và RapidLed, 𝗖𝗶𝗿𝗰𝗮𝗱𝗶𝗮𝗻 không chỉ đem đến chất lượng ánh sáng tuyệt vời mà còn có những công nghệ vượt trội so với đối thủ.
+        <p class="text-3xl text-white mx-auto text-center font-bold py-4">
+          Nổi bật
         </p>
+        <p class="text-center mx-auto mt-4 max-w-3xl text-lg text-gray-500">
+          
+          
+            Những tính năng làm sự khác biệt của <b>Lighting+Magic</b>.
+         
+        </p>
+        <br/>
       </div>
   
-      <div class="mt-10">
-        <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-1 md:gap-x-8 md:gap-y-10">
-          <div class="flex md:max-w-xl">
-            <div class="flex-shrink-0">
-              <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                <!-- Heroicon name: globe-alt -->
-                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg>
-              </div>
-            </div>
-            <div class="ml-4">
-              <dt class="text-lg leading-6 font-medium text-gray-200">
-                Ánh sáng thay đổi theo thời gian thực 
-              </dt>
-              <dd class="mt-2 text-base text-gray-500">
-              Vào buổi sáng sớm, ánh đèn dịu nhẹ cùng màu xanh thiên thanh sẽ được phát ra. Hay vào hoàng hôn, ánh đèn đỏ sẽ làm tôn lên những loài cây màu ấm trong bể thủy sinh của bạn. 
-              </dd>
-              
-            </div>
-          </div>
-          <div>
-            <img class="pt-2 pb-10 h-40 w-full object-cover lg:object-contain lg:w-full lg:h-full" src="./assets/images/circadian-time.png" alt="">
-          </div>
-          <div class="flex  md:max-w-xl">
-            <div class="flex-shrink-0">
-              <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                <!-- Heroicon name: annotation -->
-                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                </svg>
-              </div>
-            </div>
-            <div class="ml-4">
-              <dt class="text-lg leading-6 font-medium text-gray-200">
-                Điều khiển hệ thống trên điện thoại
-              </dt>
-              <dd class="mt-2 text-base text-gray-500">
-                Sử dụng hệ thống AquaSmart, người dùng có thể có thể bật tắt đèn từ xa, tùy biến các kênh màu của đèn theo các mốc thời gian,...
-              </dd>
-            </div>
-          </div>
-          <!-- <div>
-            <img class="hidden pt-2 pb-10 h-40 w-full object-cover lg:object-contain md:block lg:w-full lg:h-full" src="./assets/images/circadian-ui.png" alt="">
-          </div>
-          <div>
-            <img class=" pt-2 pb-10 h-auto w-full object-cover lg:object-contain md:hidden" src="./assets/images/circadian-ui.png" alt="">
-          </div> -->
-          <div>
-            <img class="pt-2 pb-3 h-56 w-full object-cover lg:object-contain lg:w-full lg:h-full" src="./assets/images/circadian-ui.png" alt="">
-          </div>
-        </dl>
-      </div>
-    </div>
-  </div>
-
-  <!-- This example requires Tailwind CSS v2.0+ -->
-<div id="announce-to" class="bg-gray-900 mb-10">
-  <div class="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between flex-wrap">
-      <div class="w-0 flex-1 flex items-center">
-        <span class="flex p-2 rounded-lg bg-indigo-500">
-          <!-- Heroicon name: speakerphone -->
-          <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
-          </svg>
-        </span>
-        <p class="ml-3 font-medium text-white truncate">
-          <span class="inline">
-            Sử dụng hệ thống AquaSmart ngay nào!
-          </span>
-        </p>
-      </div>
-      <div class="order-3 mt-2 flex-shrink-0 w-full sm:order-2 sm:mt-0 sm:w-auto">
-        <a href="https://aquasmart-platform.web.app" class="flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium bg-gray-800 hover:text-black hover:bg-white text-transparent">
-          <span class="bg-clip-text bg-gradient-to-r from-blue-200 to-purple-300 ">
-            Sử dụng
-          </span>
-        </a>
-      </div>
-      <div class="order-2 flex-shrink-0 sm:order-3 sm:ml-3">
-        <button type="button" class="announce-link -mr-1 flex p-2 rounded-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-white sm:-mr-2">
-          <span class="sr-only">Dismiss</span>
-          <!-- Heroicon name: x -->
-          <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-
-  <div id="contact-to" class="mt-10 sm:mt-0">
-    <div class="md:grid md:grid-cols-3 md:gap-6">
-      <div class="md:col-span-1">
-        <div class="ml-1 sm:ml-8 px-4 sm:px-0">
-          <h2 class="text-base text-gray-400 font-semibold tracking-wide uppercase">Liên hệ</h2>
-          <img class="h-10 mt-5" src="./assets/images/logo.png" alt="Workflow">\
-          <div class="block mb-1">
-            <p class="text-sm font-light text-gray-300">Email: <b>lightingplusmagic@gmail.com</b></p>
-            <p class="text-sm font-light text-gray-300">Số điện thoại: <b>0903470077</b></p>
-            <p class="text-sm font-light text-gray-300">Facebook: <a href="https://www.facebook.com/lightingplusmagic/" class="text-purple-300">@lightingplusmagic</a></p>
-          </div>
       
+    </div>
+    <div class="max-w-7xl mx-auto w-full mb-10 px-4 sm:px-6 lg:px-8 flex space-x-8 overflow-x-auto">
+      <div class="w-80 md:w-96 flex flex-shrink-0 justify-center flex-col bg-gradient-to-t from-yellow-900 to-black p-6 rounded-xl p-10">
+        <img class="" src="./assets/images/sample-app.png"/>
+        <br/>
+        <div class="text-gray-200 mx-4">
+          <p class="text-xl text-center font-medium">Hệ thống AquaSmart</p>
+          <br/>
+          <p class="text-gray-300 text-base text-center">Các sản phẩm của Lighting+Magic được hỗ trợ hoàn toàn trên hệ thống thông minh AquaSmart.</p>
+          <br/>
+          <a class="bg-blue-600 w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full  text-white hover:text-black hover:bg-white md:py-3 md:text-lg md:px-10 shadow-lg" href="https://aquasmart-platform.web.app">
+            <span class="">Sử dụng</span>
+          </a>
         </div>
       </div>
-      <div class="mt-5 md:mt-0 md:col-span-2">
+      <div class="w-80 md:w-96 flex-shrink-0 flex justify-center flex-col bg-gradient-to-t from-yellow-900 to-black p-6 rounded-xl">
+        <img class="" src="./assets/images/sun-sim.png"/>
+        <br/>
+        <div class="text-gray-200 mx-4">
+          <p class="text-xl text-center font-medium">Mô phỏng bầu trời</p>
+          <br/>
+          <p class="text-gray-300 text-base text-center">Mô phỏng ánh sáng chân thực nhất tại mọi nơi trên thế giới nhờ công cụ độc quyền của Lighting+Magic.</p>
+          <br/>
+          <a class="bg-blue-600 w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full  text-white hover:text-black hover:bg-white md:py-3 md:text-lg md:px-10 shadow-lg" href="/sky-simulator">
+            <span class="">Sử dụng</span>
+          </a>
+        </div>
+      </div>
+      <div class="w-80 md:w-96 flex-shrink-0 flex justify-center flex-col bg-gradient-to-t from-yellow-900 to-black p-6 rounded-xl">
+        <img class="" src="./assets/images/control-ui.png"/>
+        <br/>
+        <div class="text-gray-200 mx-4">
+          <p class="text-xl text-center font-medium">Điều khiển trực quan</p>
+          <br/>
+          <p class="text-gray-300 text-base text-center">Giao diện điều khiển khoa học, dễ dàng. Hỗ trợ file .solarpreset giúp người dùng dễ dàng chia sẻ preset màu.</p>
+          <br/>
+          <a class="bg-blue-600 w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full  text-white hover:text-black hover:bg-white md:py-3 md:text-lg md:px-10 shadow-lg" href="https://aquasmart-platform.web.app">
+            <span class="">Sử dụng</span>
+          </a>
+        </div>
+      </div>
+      
+
+      
+    </div>
+  </div>
+
+  <div class="mx-auto max-w-7xl">
+    <div class="max-w-7xl mx-auto w-full mb-10 px-4 sm:px-6 lg:px-8">
+      <div class="mb-10">
+        <h2  class="text-center text-base text-gray-200 font-semibold tracking-wide uppercase">Đối tác</h2>
+        <!-- <p class="py-2 mt-2 text-3xl leading-8 font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-green-500 sm:text-4xl">
+          Hệ thống ánh sáng L+M
+        </p> -->
+        <p class="text-3xl text-white mx-auto text-center font-bold py-4">
+          Đối tác chính
+        </p>
+        
+        <br/>
+      </div>
+  
+      
+    </div>
+    <div class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row flex-wrap justify-center items-center sm:space-x-16 space-y-16 sm:space-y-0 overflow-x-auto pb-36">
+      <div class="w-32" style="filter: grayscale(100%)">
+        <img class="w-full" src="data:image/png;base64,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"/>
+      </div>
+      <div class="w-32">
+      <img class="w-full" style="filter: grayscale(100%)" src="https://www.thegioiic.com/upload/large/12525.jpg"/>
+      </div>
+      <div class="w-32">
+        <img class="w-full" style="filter: grayscale(100%)" src="https://bizweb.dktcdn.net/100/332/152/themes/690782/assets/logo.png?1606326068957"/>
+      </div>
+      <div class="w-32">
+        <img class="w-full" style="filter: grayscale(100%)" src="https://roytech.vn/frontend/giao_dien/roytech/assets/images/logos/roytech.png"/>
+      </div>
+    </div>
+  </div>
+
+  <div id="contact-to" class="max-w-7xl w-full mx-auto">
+    <div>
+      <h2  class="text-center text-base text-gray-200 font-semibold tracking-wide uppercase">Liên hệ</h2>
+      <p class="text-3xl text-white mx-auto text-center font-bold py-4">
+        Phản hồi cho chúng tôi
+      </p>
+    </div>
+      <div class="">
         <form id="contact-form" name="contact_form">
-          <div class="shadow overflow-hidden sm:rounded-md">
-            <div class="px-4 py-5 bg-gray-900 sm:p-6">
+          <div class="shadow overflow-hidden mx-auto max-w-4xl">
+            <div class="px-4 py-5 sm:p-6">
               <div class="grid grid-cols-6 gap-6">
                 <div class="col-span-6 sm:col-span-3">
                   <label for="first_name" class="block text-sm font-medium text-gray-300">Tên</label>
-                  <input type="text" name="first_name" id="first_name" autocomplete="given-name" class="py-2 mt-1 outline-none focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm rounded-md bg-gray-700 text-gray-200 px-2 border border-gray-400" placeholder="Văn A">
+                  <input type="text" name="first_name" id="first_name" autocomplete="given-name" class="py-2 mt-1 outline-none focus:ring-blue-500 focus:border-indigo-500 block w-full shadow-sm sm:txt-sm border-gray-900 rounded-md bg-gray-900 text-gray-200 px-2 border border-gray-400" placeholder="Văn A">
                 </div>
   
                 <div class="col-span-6 sm:col-span-3">
                   <label for="last_name" class="block text-sm font-medium text-gray-300">Họ</label>
-                  <input type="text" name="last_name" id="last_name" autocomplete="family-name" class="py-2 mt-1 outline-none focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md bg-gray-700 text-gray-200 px-2 border border-gray-400" placeholder="Nguyễn">
+                  <input type="text" name="last_name" id="last_name" autocomplete="family-name" class="py-2 mt-1 outline-none focus:ring-blue-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-900 rounded-md bg-gray-900 text-gray-200 px-2 border border-gray-400" placeholder="Nguyễn">
                 </div>
   
                 <div class="col-span-6 sm:col-span-4">
                   <label for="email_address" class="block text-sm font-medium text-gray-300">Địa chỉ email</label>
-                  <input type="text" name="email_address" id="email_address" autocomplete="email" class="py-2 mt-1 outline-none focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md bg-gray-700 text-gray-200 px-2 border border-gray-400" placeholder="email@gmail.com">
+                  <input type="text" name="email_address" id="email_address" autocomplete="email" class="py-2 mt-1 outline-none focus:ring-blue-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-900 rounded-md bg-gray-900 text-gray-200 px-2 border border-gray-400" placeholder="email@gmail.com">
                 </div>
   
                 <div class="col-span-6 sm:col-span-4">
                   <label for="phone_number" class="block text-sm font-medium text-gray-300">Số điện thoại</label>
-                  <input type="text" name="phone_number" id="phone_number" autocomplete="phone-number" class="py-2 mt-1 outline-none focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md bg-gray-700 text-gray-200 px-2 border border-gray-400" placeholder="090xxxxxxxx">
+                  <input type="text" name="phone_number" id="phone_number" autocomplete="phone-number" class="py-2 mt-1 outline-none focus:ring-blue-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-900 rounded-md bg-gray-900 text-gray-200 px-2 border border-gray-400" placeholder="090xxxxxxxx">
                 </div>
 
                 <div  class="col-span-6 sm:col-span-4">
@@ -379,7 +365,7 @@
                     Nội dung
                   </label>
                   <div class="mt-1">
-                    <textarea id="content" name="content" rows="3" class="outline-none shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md bg-gray-700 text-gray-200 px-2 py-2 border border-gray-400" placeholder="Nội dung của bạn"></textarea>
+                    <textarea id="content" name="content" rows="3" class="outline-none shadow-sm focus:ring-blue-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-900 rounded-md bg-gray-900 text-gray-200 px-2 py-2 border border-gray-400" placeholder="Nội dung của bạn"></textarea>
                   </div>
                   <p class="mt-2 text-sm text-gray-300">
                     Phản hồi của bạn sẽ được gửi đến Jot Form của Lighting+Magic.
@@ -389,14 +375,28 @@
 
               
             </div>
-            <div class="px-4 py-3 bg-gray-900 text-right sm:px-6">
-              <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            <div class="mx-auto px-4 py-3 text-left sm:px-6">
+              <button type="submit" class="w-24 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-full text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 shadow-xl">
                 Gửi đi
               </button>
             </div>
+
+            <br/>
           </div>
         </form>
       </div>
+  </div>
+
+  <div class="max-w-7xl w-full mx-auto py-20  bg-gradient-to-t from-gray-900 to-black ">
+    <div class="ml-1 sm:ml-8 px-4 sm:px-0">
+      <h2 class="text-base text-gray-400 font-semibold tracking-wide uppercase">Liên hệ</h2>
+      <img class="h-10 mt-5" src="./assets/images/logo.png" alt="Workflow">\
+      <div class="block mb-1">
+        <p class="text-sm font-light text-gray-300">Email: <b>lightingplusmagic@gmail.com</b></p>
+        <p class="text-sm font-light text-gray-300">Số điện thoại: <b>0903470077</b></p>
+        <p class="text-sm font-light text-gray-300">Facebook: <a href="https://www.facebook.com/lightingplusmagic/" class="text-purple-300">@lightingplusmagic</a></p>
+      </div>
+  
     </div>
   </div>
   <script src="https://js.jotform.com/JotForm.js"></script>

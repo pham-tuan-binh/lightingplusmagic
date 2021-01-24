@@ -8,9 +8,9 @@ module.exports = {
     cssnano({
       preset: "default",
     }),
-    purgecss({
-      content: ["./public/**/*.html", "./public/**/*.js"],
-      defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
-    }),
+    // purgecss({
+    //   content: ["./public/**/*.html", "./public/**/*.js"],
+    //   defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
+    // }),
   ],
 };
